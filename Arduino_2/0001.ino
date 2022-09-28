@@ -3,6 +3,6 @@ void setup(){
 }
 
 void loop(){
-    Serial.println("hello VSCode!!");
+    Serial.println("hellasdfo VSCode!!");
     delay(500);
 }

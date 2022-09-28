@@ -1,0 +1,7 @@
+{
+    "configuration": "cpu=atmega328old",
+    "board": "arduino:avr:nano",
+    "sketch": "Arduino/220928_FSR.ino",
+    "port": "/dev/tty.usbserial-2110",
+    "output": "../ArduinoOutput"
+}

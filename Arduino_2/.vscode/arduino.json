@@ -1,0 +1,7 @@
+{
+    "sketch": "220928_FSR.ino",
+    "configuration": "cpu=atmega328old",
+    "board": "arduino:avr:nano",
+    "port": "/dev/tty.usbserial-2110",
+    "programmer": "arduino:avrispmkii"
+}

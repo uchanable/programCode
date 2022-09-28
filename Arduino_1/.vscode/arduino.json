@@ -1,0 +1,7 @@
+{
+    "board": "arduino:avr:mega",
+    "sketch": "20230329_sensor_check_2/20230329_sensor_check_2.ino",
+    "port": "/dev/tty.usbmodem11101",
+    "programmer": "arduino:avrisp",
+    "configuration": "cpu=atmega2560"
+}
