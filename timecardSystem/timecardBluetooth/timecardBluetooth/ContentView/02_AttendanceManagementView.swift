@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AttendanceManagementView: View {
+<<<<<<< HEAD
     @ObservedObject var bluetoothViewModel: BluetoothViewModel
     var onActionSelect: (AppState) -> Void
     @State private var showingUID = false
@@ -82,3 +83,18 @@ struct LargeButtonStyle: ButtonStyle {
             .font(.headline)
     }
 }
+=======
+    var onActionSelect: (AppState) -> Void
+    
+    var body: some View {
+        List {
+            Button("出勤") { onActionSelect(.checkIn) }
+            Button("退勤") { onActionSelect(.checkOut) }
+            Button("休み") { onActionSelect(.breakStart) }
+            Button("働く") { onActionSelect(.breakEnd) }
+            Button("修正") { onActionSelect(.attendanceCorrection) }
+            Button("登録") { onActionSelect(.addStaff) }
+        }
+    }
+}
+>>>>>>> d03f1b8d1eefd0c06ee7fc2fc7147d5b94b52b3f

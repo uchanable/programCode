@@ -5,6 +5,7 @@
 //  Created by 임유찬 on 2024/02/28.
 //
 
+<<<<<<< HEAD
 import SwiftUI
 
 struct BreakStartView: View {
@@ -26,3 +27,6 @@ struct BreakStartView: View {
         }
     }
 }
+=======
+import Foundation
+>>>>>>> d03f1b8d1eefd0c06ee7fc2fc7147d5b94b52b3f
