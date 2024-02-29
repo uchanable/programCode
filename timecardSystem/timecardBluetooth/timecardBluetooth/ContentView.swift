@@ -20,59 +20,57 @@ struct ContentView: View {
     @State private var showBluetoothDisconnectedAlert = false
     
     var body: some View {
-        switch appState {
-        case .initial:
-            InitialView(bluetoothViewModel: bluetoothViewModel)
-                .onChange(of: bluetoothViewModel.isConnected) {
-                    if bluetoothViewModel.isConnected {
-                        appState = .attendanceManagement
-                    }
+        ZStack{
+            switch appState {
+            case .initial:
+                InitialView(bluetoothViewModel: bluetoothViewModel)
+            case .attendanceManagement:
+                AttendanceManagementView(bluetoothViewModel:bluetoothViewModel) {
+                    appState = $0
                 }
-                .alert(isPresented: $showBluetoothDisconnectedAlert){
-                    Alert(
-                        title: Text("Bluetooth 연결 해제"),
-                        message: Text("블루투스 연결이 해제되었습니다."),
-                        dismissButton: .default(Text("확인"))
-                    )
+            case .checkIn:
+                CheckInView(bluetoothViewModel: bluetoothViewModel) {
+                    appState = .attendanceManagement
                 }
-        case .attendanceManagement:
-            AttendanceManagementView(bluetoothViewModel:bluetoothViewModel) {
-                appState = $0
-            }
-            .onChange(of: bluetoothViewModel.isConnected){
-                if !bluetoothViewModel.isConnected{
-                    bluetoothViewModel.disconnectDevice()
-                    showBluetoothDisconnectedAlert = true
-                    startAlertDissmissTimer()
-                    appState = .initial
+            case .checkOut:
+                CheckOutView {
+                    appState = .attendanceManagement
                 }
+            case .breakStart:
+                BreakStartView {
+                    appState = .attendanceManagement
+                }
+            case .breakEnd:
+                BreakEndView {
+                    appState = . attendanceManagement
+                }
+            case .attendanceCorrection:
+                AttendanceCorrelationView {
+                    appState = .attendanceManagement
+                }
+            case .addStaff:
+                AddStaffView {
+                    appState = .attendanceManagement
+                }
+                
             }
-            
-        case .checkIn:
-            CheckInView(bluetoothViewModel: bluetoothViewModel) {
+        }
+        .onChange(of: bluetoothViewModel.isConnected){
+            if !bluetoothViewModel.isConnected{
+                bluetoothViewModel.disconnectDevice()
+                showBluetoothDisconnectedAlert = true
+                startAlertDissmissTimer()
+                appState = .initial
+            } else {
                 appState = .attendanceManagement
             }
-        case .checkOut:
-            CheckOutView {
-                appState = .attendanceManagement
-            }
-        case .breakStart:
-            BreakStartView {
-                appState = .attendanceManagement
-            }
-        case .breakEnd:
-            BreakEndView {
-                appState = . attendanceManagement
-            }
-        case .attendanceCorrection:
-            AttendanceCorrelationView {
-                appState = .attendanceManagement
-            }
-        case .addStaff:
-            AddStaffView {
-                appState = .attendanceManagement
-            }
-            
+        }
+        .alert(isPresented: $showBluetoothDisconnectedAlert){
+            Alert(
+                title: Text("Bluetooth 연결 해제"),
+                message: Text("블루투스 연결이 해제되었습니다."),
+                dismissButton: .default(Text("확인"))
+            )
         }
     }
     private func startAlertDissmissTimer() {
@@ -114,5 +112,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
 

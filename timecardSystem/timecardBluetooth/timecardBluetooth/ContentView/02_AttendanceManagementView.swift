@@ -18,38 +18,47 @@ struct AttendanceManagementView: View {
     @State private var bottomGridItems: [GridItem] = Array(repeating: .init(.flexible()), count: 4)
      
     var body: some View {
-        ScrollView {
-            
-            LazyVGrid(columns: topGridItems, spacing: 20){
-                Button("出勤") { onActionSelect(.checkIn) }
-                Button("退勤") { onActionSelect(.checkOut) }
-                Button("休み") { onActionSelect(.breakStart) }
-                Button("働く") { onActionSelect(.breakEnd) }
+        VStack {
+            // 블루투스 연결 상태 표시
+            HStack {
+                Image(systemName: bluetoothViewModel.isConnected ? "antenna.radiowaves.left.and.right" : "antenna.radiowaves.left.and.right.slash")
+                Text(bluetoothViewModel.isConnected ? "Connected" : "Disconnected")
             }
-            .buttonStyle(LargeButtonStyle())
+            .padding()
             
-            LazyVGrid(columns: bottomGridItems, spacing: 40){
-                Button("修正") { onActionSelect(.attendanceCorrection) }
-                Button("登録") { onActionSelect(.addStaff) }
-                Capsule()
-                    .fill(Color.white)
-                Capsule()
-                    .fill(Color.white)
+            ScrollView {
+                
+                LazyVGrid(columns: topGridItems, spacing: 20){
+                    Button("出勤") { onActionSelect(.checkIn) }
+                    Button("退勤") { onActionSelect(.checkOut) }
+                    Button("休み") { onActionSelect(.breakStart) }
+                    Button("働く") { onActionSelect(.breakEnd) }
+                }
+                .buttonStyle(LargeButtonStyle())
+                
+                LazyVGrid(columns: bottomGridItems, spacing: 40){
+                    Button("修正") { onActionSelect(.attendanceCorrection) }
+                    Button("登録") { onActionSelect(.addStaff) }
+                    Capsule()
+                        .fill(Color.white)
+                    Capsule()
+                        .fill(Color.white)
+                }
+                .buttonStyle(LargeButtonStyle())
+                
+                if showingUID {
+                    Text("UID : \(bluetoothViewModel.receivedUID)")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(8)
+                        .onAppear(){
+                            startDissmissTimer()
+                        }
+                }
             }
-            .buttonStyle(LargeButtonStyle())
-            
-            if showingUID {
-                Text("UID : \(bluetoothViewModel.receivedUID)")
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(8)
-                    .onAppear(){
-                        startDissmissTimer()
-                    }
-            }
+            .padding()
         }
-        .padding()
         .onAppear{
             bluetoothViewModel.clearReceivedUID() // 화면 실행 시 UID 초기화
         }
