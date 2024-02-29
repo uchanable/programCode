@@ -6,7 +6,7 @@
 //
 
 import Foundation
-<<<<<<< HEAD
+
 
 struct Employee: Codable, Identifiable {
     var id: String // UID를 ID로 사용
@@ -62,5 +62,3 @@ class EmployeeViewModel: ObservableObject {
     }
     
 }
-=======
->>>>>>> d03f1b8d1eefd0c06ee7fc2fc7147d5b94b52b3f

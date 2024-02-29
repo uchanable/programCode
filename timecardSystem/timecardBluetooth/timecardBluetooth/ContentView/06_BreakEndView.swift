@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct BreakEndView: View {
-<<<<<<< HEAD
+
     var onBreakEnd: () -> Void
     
     var body: some View {
@@ -26,12 +26,5 @@ struct BreakEndView: View {
             .foregroundColor(.white)
             .cornerRadius(8)
         }
-=======
-    var onCheckIn: () -> Void
-    
-    var body: some View {
-        // 출근 NFC 태그 읽기 화면 구현
-        Text("퇴근 NFC 태그를 읽어주세요.")
->>>>>>> d03f1b8d1eefd0c06ee7fc2fc7147d5b94b52b3f
     }
 }

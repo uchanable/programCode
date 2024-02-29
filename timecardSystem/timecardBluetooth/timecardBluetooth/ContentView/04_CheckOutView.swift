@@ -5,9 +5,8 @@
 //  Created by 임유찬 on 2024/02/28.
 //
 
-<<<<<<< HEAD
 import SwiftUI
-
+ 
 struct CheckOutView: View {
     var onCheckOut: () -> Void
     
@@ -27,6 +26,3 @@ struct CheckOutView: View {
         }
     }
 }
-=======
-import Foundation
->>>>>>> d03f1b8d1eefd0c06ee7fc2fc7147d5b94b52b3f

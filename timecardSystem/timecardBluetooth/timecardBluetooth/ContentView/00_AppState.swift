@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+ 
 
 //앱의 화면 상태를 나타내는 열거형
 enum AppState{
