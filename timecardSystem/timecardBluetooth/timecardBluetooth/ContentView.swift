@@ -4,6 +4,12 @@
 //
 //  Created by 임유찬 on 2024/02/26.
 //
+
+// git add .
+// git commit -m ""
+// git push
+// git status
+// git pull
  
 import SwiftUI
 
