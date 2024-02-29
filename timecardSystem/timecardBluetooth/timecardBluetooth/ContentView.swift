@@ -28,7 +28,6 @@ struct ContentView: View {
                         appState = .attendanceManagement
                     }
                 }
-            
                 .alert(isPresented: $showBluetoothDisconnectedAlert){
                     Alert(
                         title: Text("Bluetooth 연결 해제"),

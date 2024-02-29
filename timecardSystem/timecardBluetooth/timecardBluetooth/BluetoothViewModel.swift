@@ -22,15 +22,15 @@ extension Character {
 
 class BluetoothViewModel: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     var centralManager: CBCentralManager!
-    @Published var isConnected = false {
+    @Published var isConnected = false/* {
         didSet {
             // 연걸 상태가 변경될 때마다 Alert 표시 상태도 초기화
             showDisconnectAlert = false
         }
-    }
+    }*/
     @Published var discoveredDevices = [String]() // 발견된 디바이스의 이름을 저장할 배열
     @Published var shouldShowConnectAlert = false // 연결 확인 Alert를 표시할지 결정하는 플래그
-    @Published var showDisconnectAlert = false // 연결 해제 확인 Alert 표시 제어
+    // @Published var showDisconnectAlert = false // 연결 해제 확인 Alert 표시 제어
     @Published var receivedUID = "" // NFC 태그 UID 저장
     @Published var isScanning = false // 스캔 중인지 여부
     @Published var showScanFailedAlert = false // 스캔 실패 Alert 표시 제어
@@ -63,13 +63,13 @@ class BluetoothViewModel: NSObject, ObservableObject, CBCentralManagerDelegate, 
         scanTimer?.invalidate() // 이전에 설정된 타이머가 있다면 취소합니다.
         scanTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { [weak self] _ in
             guard let self = self else { return }
-            if !self.isConnected && self.shouldShowConnectAlert == false {
+            if !self.isConnected && !self.shouldShowConnectAlert {
                 // 원하는 블루투스 디바이스를 찾지 못한 경우
                 print("Bluetooth device detection failed.")
                 self.stopScanning() // 스캔을 중지합니다.
                 DispatchQueue.main.async {
                     self.showScanFailedAlert = true // 스캔 실패 Alert 표시
-                    self.isScanning = false
+                    // self.isScanning = false stopScaning()에 포함
                 }
             }
         }
@@ -78,11 +78,12 @@ class BluetoothViewModel: NSObject, ObservableObject, CBCentralManagerDelegate, 
     func stopScanning() {
         centralManager.stopScan()
         isScanning = false
+        // shouldShowConnectAlert = false 굳이 필요하지 않을듯.
         print("Scanning stopped.")
     }
     
 
-    
+    // disconnectDevice 함수는 disconnect버튼을 생성하지 않았으므로 사용하지 않을듯. 아 사용중이네 ㅋㅋ 근데 showDisconnectAlert는 사용안하는듯함.
     func disconnectDevice() {
         guard let peripheral = targetPeripheral else { return }
         centralManager.cancelPeripheralConnection(peripheral)
@@ -90,9 +91,11 @@ class BluetoothViewModel: NSObject, ObservableObject, CBCentralManagerDelegate, 
         isScanning = false // 연결 해제 후 스캔을 다시 시작할 수 있도록 준비
         targetPeripheral = nil // 현재 연결된 장치 참조 해제
         clearReceivedUID() // UID 초기화
+        /*
         DispatchQueue.main.async {
             self.showDisconnectAlert = false
         }
+         */
     }
 
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String: Any], rssi RSSI: NSNumber) {
@@ -111,18 +114,21 @@ class BluetoothViewModel: NSObject, ObservableObject, CBCentralManagerDelegate, 
     // 연결 실패 및 해제 처리
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
         print("Failed to connect to \(peripheral.name ?? "")")
+        shouldShowConnectAlert = false
     }
     // 연결 해제 메서드 추가
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         isConnected = false
         isScanning = false // 여기도 상태 업데이트
+        shouldShowConnectAlert = false
         print("Disconnected from \(peripheral.name ?? "")")
     }
     
     // Peripheral이 연결되었을 때 호출되는 메서드 내에 추가
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         isConnected = true
-        isScanning = false // 연결되었으므로 스캔 중지
+        // isScanning = false // 연결되었으므로 스캔 중지 인데 이미 didDiscover에서 실행됨
+        shouldShowConnectAlert = false
         targetPeripheral = peripheral
         print("Connected to \(peripheral.name ?? "")")
         peripheral.delegate = self // 중요: Peripheral의 델리게이트 설정

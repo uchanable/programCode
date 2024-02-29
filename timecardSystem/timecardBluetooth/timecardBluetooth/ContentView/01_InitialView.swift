@@ -28,6 +28,7 @@ struct InitialView: View {
             }
             Button("Cancel", role: .cancel) {
                 bluetoothViewModel.stopScanning()
+                bluetoothViewModel.shouldShowConnectAlert = false
             }
         } message: {
             Text("Do you want to connect to REYAX_BLE_RYB080I?")
