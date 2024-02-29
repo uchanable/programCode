@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA21B01E2B9073B8006BFF98 /* oldBTVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA21B01D2B9073B8006BFF98 /* oldBTVModel.swift */; };
 		DAD46C5E2B8C581500CF13A7 /* timecardBluetoothApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD46C5D2B8C581500CF13A7 /* timecardBluetoothApp.swift */; };
 		DAD46C602B8C581500CF13A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD46C5F2B8C581500CF13A7 /* ContentView.swift */; };
 		DAD46C622B8C581700CF13A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD46C612B8C581700CF13A7 /* Assets.xcassets */; };
-		DAD46C652B8C581700CF13A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD46C642B8C581700CF13A7 /* Preview Assets.xcassets */; };
 		DAD46C6F2B8C581700CF13A7 /* timecardBluetoothTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD46C6E2B8C581700CF13A7 /* timecardBluetoothTests.swift */; };
 		DAD46C792B8C581700CF13A7 /* timecardBluetoothUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD46C782B8C581700CF13A7 /* timecardBluetoothUITests.swift */; };
 		DAD46C7B2B8C581700CF13A7 /* timecardBluetoothUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD46C7A2B8C581700CF13A7 /* timecardBluetoothUITestsLaunchTests.swift */; };
 		DAD46C8B2B8C591E00CF13A7 /* BluetoothViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD46C8A2B8C591E00CF13A7 /* BluetoothViewModel.swift */; };
 		DAD46C8C2B8C5B0300CF13A7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD46C882B8C586C00CF13A7 /* CoreBluetooth.framework */; };
+		DAE7314A2B8F14A500D2DF73 /* EmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE731492B8F14A500D2DF73 /* EmployeeViewModel.swift */; };
+		DAE7314E2B8F276D00D2DF73 /* 01_InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE7314D2B8F276D00D2DF73 /* 01_InitialView.swift */; };
+		DAE731512B8F283100D2DF73 /* 50_UIDCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE731502B8F283100D2DF73 /* 50_UIDCheck.swift */; };
+		DAE731532B8F6E6000D2DF73 /* 00_AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE731522B8F6E6000D2DF73 /* 00_AppState.swift */; };
+		DAE731552B8F701B00D2DF73 /* 02_AttendanceManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE731542B8F701B00D2DF73 /* 02_AttendanceManagementView.swift */; };
+		DAE731572B8F70BA00D2DF73 /* 03_CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE731562B8F70BA00D2DF73 /* 03_CheckInView.swift */; };
+		DAE731592B8F70C500D2DF73 /* 04_CheckOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE731582B8F70C500D2DF73 /* 04_CheckOutView.swift */; };
+		DAE7315B2B8F70CE00D2DF73 /* 05_BreakStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE7315A2B8F70CE00D2DF73 /* 05_BreakStartView.swift */; };
+		DAE7315D2B8F70D800D2DF73 /* 06_BreakEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE7315C2B8F70D800D2DF73 /* 06_BreakEndView.swift */; };
+		DAE7315F2B8F70E500D2DF73 /* 07_AttendanceCorrelationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE7315E2B8F70E500D2DF73 /* 07_AttendanceCorrelationView.swift */; };
+		DAE731612B8F70EF00D2DF73 /* 08_AddStaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE731602B8F70EF00D2DF73 /* 08_AddStaffView.swift */; };
+		DAE731632B8F8C5300D2DF73 /* complete.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DAE731622B8F8C5200D2DF73 /* complete.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA21B01D2B9073B8006BFF98 /* oldBTVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oldBTVModel.swift; sourceTree = "<group>"; };
 		DAD46C5A2B8C581500CF13A7 /* timecardBluetooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timecardBluetooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD46C5D2B8C581500CF13A7 /* timecardBluetoothApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timecardBluetoothApp.swift; sourceTree = "<group>"; };
 		DAD46C5F2B8C581500CF13A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DAD46C612B8C581700CF13A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DAD46C642B8C581700CF13A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DAD46C6A2B8C581700CF13A7 /* timecardBluetoothTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = timecardBluetoothTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD46C6E2B8C581700CF13A7 /* timecardBluetoothTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timecardBluetoothTests.swift; sourceTree = "<group>"; };
 		DAD46C742B8C581700CF13A7 /* timecardBluetoothUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = timecardBluetoothUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +60,18 @@
 		DAD46C7A2B8C581700CF13A7 /* timecardBluetoothUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timecardBluetoothUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DAD46C882B8C586C00CF13A7 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		DAD46C8A2B8C591E00CF13A7 /* BluetoothViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothViewModel.swift; sourceTree = "<group>"; };
+		DAE731492B8F14A500D2DF73 /* EmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewModel.swift; sourceTree = "<group>"; };
+		DAE7314D2B8F276D00D2DF73 /* 01_InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 01_InitialView.swift; sourceTree = "<group>"; };
+		DAE731502B8F283100D2DF73 /* 50_UIDCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 50_UIDCheck.swift; sourceTree = "<group>"; };
+		DAE731522B8F6E6000D2DF73 /* 00_AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 00_AppState.swift; sourceTree = "<group>"; };
+		DAE731542B8F701B00D2DF73 /* 02_AttendanceManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 02_AttendanceManagementView.swift; sourceTree = "<group>"; };
+		DAE731562B8F70BA00D2DF73 /* 03_CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 03_CheckInView.swift; sourceTree = "<group>"; };
+		DAE731582B8F70C500D2DF73 /* 04_CheckOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 04_CheckOutView.swift; sourceTree = "<group>"; };
+		DAE7315A2B8F70CE00D2DF73 /* 05_BreakStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 05_BreakStartView.swift; sourceTree = "<group>"; };
+		DAE7315C2B8F70D800D2DF73 /* 06_BreakEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 06_BreakEndView.swift; sourceTree = "<group>"; };
+		DAE7315E2B8F70E500D2DF73 /* 07_AttendanceCorrelationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 07_AttendanceCorrelationView.swift; sourceTree = "<group>"; };
+		DAE731602B8F70EF00D2DF73 /* 08_AddStaffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 08_AddStaffView.swift; sourceTree = "<group>"; };
+		DAE731622B8F8C5200D2DF73 /* complete.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = complete.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,21 +124,16 @@
 		DAD46C5C2B8C581500CF13A7 /* timecardBluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				DAE731622B8F8C5200D2DF73 /* complete.m4a */,
 				DAD46C5D2B8C581500CF13A7 /* timecardBluetoothApp.swift */,
 				DAD46C5F2B8C581500CF13A7 /* ContentView.swift */,
+				DA21B01D2B9073B8006BFF98 /* oldBTVModel.swift */,
+				DAE7314F2B8F277500D2DF73 /* ContentView */,
 				DAD46C8A2B8C591E00CF13A7 /* BluetoothViewModel.swift */,
+				DAE731492B8F14A500D2DF73 /* EmployeeViewModel.swift */,
 				DAD46C612B8C581700CF13A7 /* Assets.xcassets */,
-				DAD46C632B8C581700CF13A7 /* Preview Content */,
 			);
 			path = timecardBluetooth;
-			sourceTree = "<group>";
-		};
-		DAD46C632B8C581700CF13A7 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				DAD46C642B8C581700CF13A7 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		DAD46C6D2B8C581700CF13A7 /* timecardBluetoothTests */ = {
@@ -140,6 +159,23 @@
 				DAD46C882B8C586C00CF13A7 /* CoreBluetooth.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAE7314F2B8F277500D2DF73 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				DAE731522B8F6E6000D2DF73 /* 00_AppState.swift */,
+				DAE7314D2B8F276D00D2DF73 /* 01_InitialView.swift */,
+				DAE731542B8F701B00D2DF73 /* 02_AttendanceManagementView.swift */,
+				DAE731562B8F70BA00D2DF73 /* 03_CheckInView.swift */,
+				DAE731582B8F70C500D2DF73 /* 04_CheckOutView.swift */,
+				DAE7315A2B8F70CE00D2DF73 /* 05_BreakStartView.swift */,
+				DAE7315C2B8F70D800D2DF73 /* 06_BreakEndView.swift */,
+				DAE7315E2B8F70E500D2DF73 /* 07_AttendanceCorrelationView.swift */,
+				DAE731602B8F70EF00D2DF73 /* 08_AddStaffView.swift */,
+				DAE731502B8F283100D2DF73 /* 50_UIDCheck.swift */,
+			);
+			path = ContentView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,8 +282,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAD46C652B8C581700CF13A7 /* Preview Assets.xcassets in Resources */,
 				DAD46C622B8C581700CF13A7 /* Assets.xcassets in Resources */,
+				DAE731632B8F8C5300D2DF73 /* complete.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +308,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE731552B8F701B00D2DF73 /* 02_AttendanceManagementView.swift in Sources */,
+				DAE731612B8F70EF00D2DF73 /* 08_AddStaffView.swift in Sources */,
+				DAE7315D2B8F70D800D2DF73 /* 06_BreakEndView.swift in Sources */,
 				DAD46C602B8C581500CF13A7 /* ContentView.swift in Sources */,
 				DAD46C5E2B8C581500CF13A7 /* timecardBluetoothApp.swift in Sources */,
+				DAE7315F2B8F70E500D2DF73 /* 07_AttendanceCorrelationView.swift in Sources */,
+				DAE731532B8F6E6000D2DF73 /* 00_AppState.swift in Sources */,
+				DAE731512B8F283100D2DF73 /* 50_UIDCheck.swift in Sources */,
+				DAE7314A2B8F14A500D2DF73 /* EmployeeViewModel.swift in Sources */,
+				DA21B01E2B9073B8006BFF98 /* oldBTVModel.swift in Sources */,
+				DAE731592B8F70C500D2DF73 /* 04_CheckOutView.swift in Sources */,
+				DAE7314E2B8F276D00D2DF73 /* 01_InitialView.swift in Sources */,
+				DAE7315B2B8F70CE00D2DF73 /* 05_BreakStartView.swift in Sources */,
 				DAD46C8B2B8C591E00CF13A7 /* BluetoothViewModel.swift in Sources */,
+				DAE731572B8F70BA00D2DF73 /* 03_CheckInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
