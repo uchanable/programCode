@@ -19,4 +19,5 @@ enum AppState{
     case breakEnd               // 휴게 끝 버튼
     case attendanceCorrection   // 근태기록 수정 버튼
     case addStaff               // 종업원 등록 화면은 개발 예정
+    case gridTest               // Grid 테스트하는 뷰
 }

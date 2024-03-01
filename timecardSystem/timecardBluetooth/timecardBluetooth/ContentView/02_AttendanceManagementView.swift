@@ -39,10 +39,8 @@ struct AttendanceManagementView: View {
                 LazyVGrid(columns: bottomGridItems, spacing: 40){
                     Button("修正") { onActionSelect(.attendanceCorrection) }
                     Button("登録") { onActionSelect(.addStaff) }
-                    Capsule()
-                        .fill(Color.white)
-                    Capsule()
-                        .fill(Color.white)
+                    Button("Test") { onActionSelect(.gridTest) }
+                    Button("Back") { bluetoothViewModel.isConnected = false }
                 }
                 .buttonStyle(LargeButtonStyle())
                 

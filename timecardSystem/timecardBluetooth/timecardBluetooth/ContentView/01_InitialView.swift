@@ -28,6 +28,11 @@ struct InitialView: View {
             
             Text(bluetoothViewModel.scanStatus.rawValue)
                 .padding()
+            
+            Button("Grid Test"){
+                bluetoothViewModel.isConnected = true
+            }
+            .padding()
         }
         
         .alert("Connect to Device", isPresented: $bluetoothViewModel.shouldShowConnectAlert) {
